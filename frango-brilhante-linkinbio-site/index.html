@@ -61,7 +61,7 @@ svg.i{width:22px;height:22px;fill:#fff}
 }
 .soc:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 4px 16px rgba(0,0,0,.18)}
 .soc-ig{background:linear-gradient(135deg,#833AB4,#E1306C,#F77737)}
-.soc-fb{background:#1877F2}.soc-tk{background:#111}.soc-yt{background:#E00000}.soc-wa{background:#1FAF55}
+.soc-fb{background:#1877F2}.soc-tk{background:#111}.soc-yt{background:#E00000}.soc-wa{background:#15803D}
 
 /* sections */
 .sec{padding:0 1.25rem;margin-top:1.75rem}
@@ -78,12 +78,12 @@ svg.i{width:22px;height:22px;fill:#fff}
 .lk:active{transform:scale(.98)}
 .lk-i{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .lk-c{flex:1;min-width:0}
-.lk-t{font-size:15px;font-weight:600;line-height:1.3}
-.lk-s{font-size:12.5px;color:var(--txt2);margin-top:2px;line-height:1.35}
+.lk-t{display:block;font-size:15px;font-weight:600;line-height:1.3}
+.lk-s{display:block;font-size:12.5px;color:var(--txt2);margin-top:2px;line-height:1.35}
 .lk-a{width:18px;height:18px;fill:#C4C4C4;flex-shrink:0;transition:transform .2s,fill .2s}
 .lk:hover .lk-a{transform:translateX(3px);fill:var(--red)}
 
-.lk.vip{background:linear-gradient(135deg,#1FAF55,#178A43);border:none;box-shadow:0 4px 20px rgba(31,175,85,.28);position:relative;overflow:hidden}
+.lk.vip{background:linear-gradient(135deg,#15803D,#116B33);border:none;box-shadow:0 4px 20px rgba(21,128,61,.3);position:relative;overflow:hidden}
 .lk.vip .lk-i{background:rgba(255,255,255,.2)}
 .lk.vip .lk-t{color:#fff;font-weight:700}
 .lk.vip .lk-s{color:rgba(255,255,255,.92)}
@@ -113,18 +113,18 @@ svg.i{width:22px;height:22px;fill:#fff}
 .cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s var(--ease)}
 .cat:hover img{transform:scale(1.06)}
 .cat::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%)}
-.cat-ic{position:absolute;inset:0;z-index:-2;display:flex;align-items:center;justify-content:center}
-.cat-ic svg.i{width:44px;height:44px;opacity:.95;margin-bottom:28px}
-.cat-ic+.cat-n{text-shadow:none}
 .cat-n{position:absolute;left:14px;right:14px;bottom:12px;font-size:15px;font-weight:700;line-height:1.2;text-shadow:0 1px 4px rgba(0,0,0,.35)}
 .gal{overflow:hidden;margin:0 -1.25rem;padding:4px 0 8px;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .gal-track{display:flex;gap:10px;width:max-content;animation:galScroll 45s linear infinite}
-.gal:hover .gal-track,.gal:focus-within .gal-track{animation-play-state:paused}
+.gal:hover .gal-track,.gal:focus-within .gal-track,.gal.paused .gal-track{animation-play-state:paused}
+.gal-ctl{display:flex;align-items:center;gap:6px;margin:8px auto 0;min-height:36px;padding:0 14px;border:1px solid rgba(0,0,0,.12);border-radius:999px;background:var(--card);color:var(--txt2);font-family:inherit;font-size:12.5px;font-weight:600;line-height:1;cursor:pointer}
+.gal-ctl:hover{color:var(--txt);border-color:rgba(0,0,0,.25)}
+.gal-ctl svg{width:14px;height:14px;fill:currentColor}
 .gal figure{width:168px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;flex-shrink:0;box-shadow:var(--s2)}
 .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
 .gal figure:hover img{transform:scale(1.06)}
 @keyframes galScroll{to{transform:translateX(calc(-50% - 5px))}}
-@media(prefers-reduced-motion:reduce){.gal{overflow-x:auto;-webkit-mask:none;mask:none}.gal-track{animation:none;padding:0 1.25rem}.gal-track [aria-hidden]{display:none}}
+@media(prefers-reduced-motion:reduce){.gal{overflow-x:auto;-webkit-mask:none;mask:none}.gal-track{animation:none;padding:0 1.25rem}.gal-track [aria-hidden]{display:none}.gal-ctl{display:none}}
 .cat-n small{display:block;font-size:11.5px;font-weight:500;opacity:.9;margin-top:2px}
 .hint{font-size:12px;color:var(--txt3);margin-top:10px;text-align:center}
 
@@ -144,10 +144,7 @@ svg.i{width:22px;height:22px;fill:#fff}
 @media(min-width:900px){.mascot-peek{display:block}}
 @media(min-width:900px) and (max-width:1100px){.mascot-peek img{width:260px}}
 
-@media(max-width:360px){
-  .cat-g{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .soc{width:44px;height:44px}
-}
+@media(max-width:360px){.soc{width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -160,13 +157,8 @@ svg.i{width:22px;height:22px;fill:#fff}
   <symbol id="i-yt" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
   <symbol id="i-tag" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></symbol>
-  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></symbol>
-  <symbol id="i-meat" viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.07-6.71-4.5-12.78-4.71L2.79 7h-.8l.4 3.13C8.41 10.4 16.03 10.83 16.03 15v4.01H1V15h15.03z"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></symbol>
-  <symbol id="i-job" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></symbol>
-  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M17.12 10a6.12 6.12 0 0 0-5.78-4.16 6.1 6.1 0 0 0-2.47.52A6.48 6.48 0 0 0 3 12.5C3 16.09 5.91 19 9.5 19H17a4.5 4.5 0 0 0 .12-9z"/></symbol>
-  <symbol id="i-drink" viewBox="0 0 24 24"><path d="M3 14c0 1.3.84 2.4 2 2.82V20H3v2h6v-2H7v-3.18C8.16 16.4 9 15.3 9 14V6H3v8zm2-6h2v3H5V8z"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></symbol>
 </svg>
 
@@ -190,13 +182,13 @@ svg.i{width:22px;height:22px;fill:#fff}
 
     <a href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" target="_blank" rel="noopener" class="lk vip rv d1">
       <span class="lk-i"><svg class="i"><use href="#i-wa"/></svg></span>
-      <span class="lk-c"><span class="lk-t" style="display:block">Grupo VIP de ofertas</span><span class="lk-s" style="display:block">Peça seu convite pelo WhatsApp</span></span>
+      <span class="lk-c"><span class="lk-t">Grupo VIP de ofertas</span><span class="lk-s">Peça seu convite pelo WhatsApp</span></span>
       <svg class="lk-a"><use href="#i-arrow"/></svg>
     </a>
 
     <a href="https://www.instagram.com/frangobrilhante_reserva/" target="_blank" rel="noopener" class="lk rv d2">
       <span class="lk-i" style="background:#E53935"><svg class="i"><use href="#i-tag"/></svg></span>
-      <span class="lk-c"><span class="lk-t" style="display:block">Ofertas da semana</span><span class="lk-s" style="display:block">Confira no nosso Instagram</span></span>
+      <span class="lk-c"><span class="lk-t">Ofertas da semana</span><span class="lk-s">Confira no nosso Instagram</span></span>
       <svg class="lk-a"><use href="#i-arrow"/></svg>
     </a>
   </section>
@@ -210,7 +202,8 @@ svg.i{width:22px;height:22px;fill:#fff}
 
   <section class="sec" aria-labelledby="t-loja">
     <h2 class="sec-title" id="t-loja">Por dentro da loja</h2>
-    <div class="gal rv"><div class="gal-track"><figure><img src="gal-1.webp" alt="Ambiente do Frango Brilhante, foto 1" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-2.webp" alt="Ambiente do Frango Brilhante, foto 2" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-3.webp" alt="Ambiente do Frango Brilhante, foto 3" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-4.webp" alt="Ambiente do Frango Brilhante, foto 4" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-5.webp" alt="Ambiente do Frango Brilhante, foto 5" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-6.webp" alt="Ambiente do Frango Brilhante, foto 6" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-7.webp" alt="Ambiente do Frango Brilhante, foto 7" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-8.webp" alt="Ambiente do Frango Brilhante, foto 8" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-9.webp" alt="Ambiente do Frango Brilhante, foto 9" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-1.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-2.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-3.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-4.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-5.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-6.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-7.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-8.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-9.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure></div></div>
+    <div class="gal rv" id="gal"><div class="gal-track"><figure><img src="gal-1.webp" alt="Funcionário carregando caixas de mercadoria pelo corredor da loja" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-2.webp" alt="Cliente escolhendo produtos no balcão refrigerado de carnes e frios" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-3.webp" alt="Funcionário abastecendo a geladeira de frios e laticínios" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-4.webp" alt="Cliente sendo atendida no caixa pela equipe" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-5.webp" alt="Açougueiro cortando carne na bancada do açougue" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-6.webp" alt="Funcionário organizando as prateleiras do corredor de mercearia" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-7.webp" alt="Operadora de caixa embalando as compras de um cliente" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-8.webp" alt="Funcionário repondo produtos em frente às geladeiras de bebidas" width="480" height="600" loading="lazy" decoding="async"></figure><figure><img src="gal-9.webp" alt="Equipe organizando o estoque de mercadorias" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-1.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-2.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-3.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-4.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-5.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-6.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-7.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-8.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="gal-9.webp" alt="" width="480" height="600" loading="lazy" decoding="async"></figure></div></div>
+    <button type="button" class="gal-ctl" id="gal-ctl" aria-controls="gal"><svg aria-hidden="true"><use href="#i-pause"/></svg><span>Pausar fotos</span></button>
   </section>
 
   <section class="sec" aria-labelledby="t-setores">
@@ -247,6 +240,10 @@ svg.i{width:22px;height:22px;fill:#fff}
 if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('v'));return}
 const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');o.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
 els.forEach(e=>o.observe(e))})();
+(()=>{const g=document.getElementById('gal'),b=document.getElementById('gal-ctl');if(!g||!b)return;
+b.addEventListener('click',()=>{const p=g.classList.toggle('paused');
+b.querySelector('use').setAttribute('href',p?'#i-play':'#i-pause');
+b.querySelector('span').textContent=p?'Retomar fotos':'Pausar fotos'})})();
 </script>
 </body>
 </html>
