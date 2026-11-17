@@ -3,7 +3,7 @@ FROM nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY *.html robots.txt sitemap.xml /usr/share/nginx/html/
-COPY *.webp *.jpg *.png *.ico /usr/share/nginx/html/
+COPY *.webp *.jpg *.png *.ico *.woff2 inter-OFL.txt /usr/share/nginx/html/
 
 EXPOSE 80
 
