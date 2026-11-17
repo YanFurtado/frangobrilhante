@@ -100,7 +100,7 @@ svg.i{width:22px;height:22px;fill:#fff}
 .lk.vip .lk-s{color:rgba(255,255,255,.92)}
 .lk.vip .lk-a,.lk.vip:hover .lk-a{fill:#fff}
 @media(prefers-reduced-motion:no-preference){
-  .lk.vip::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);animation:shimmer 3.5s ease-in-out infinite}
+  .lk.vip::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);animation:shimmer 3.5s ease-in-out 3}
   @keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 }
 
@@ -108,7 +108,7 @@ svg.i{width:22px;height:22px;fill:#fff}
 .banner{border-radius:var(--r);overflow:hidden;box-shadow:var(--s2);margin-bottom:16px}
 .banner img{width:100%;height:auto;aspect-ratio:3/2;display:block;transition:transform .6s ease}
 .banner:hover img{transform:scale(1.03)}
-.about{font-size:14.5px;color:var(--txt2);line-height:1.75;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.about{font-size:14.5px;color:var(--txt2);line-height:1.75;text-align:left}
 .about+.about{margin-top:12px}
 .about b{color:var(--txt)}
 
@@ -148,7 +148,7 @@ svg.i{width:22px;height:22px;fill:#fff}
 .foot{text-align:center;padding:1.75rem 1.25rem .5rem;border-top:1px solid var(--bdr);margin:2rem 1.25rem 0}
 .foot p{font-size:12px;color:var(--txt3);line-height:1.6}
 .foot .pw{font-size:11px;margin-top:6px}
-.foot a{color:inherit;text-underline-offset:2px}
+.foot a{color:inherit;text-underline-offset:2px;display:inline-block;padding:9px 4px;margin:-9px -4px}
 .foot a:hover{color:var(--red)}
 
 /* mascote: só em telas largas, onde fica fora da coluna de conteúdo */
