@@ -46,6 +46,12 @@ E abra a página no celular para ver se o mapa e os links carregam.
 
 - **Link do grupo de WhatsApp**: aparece em vários `href` do `index.html`. Troque todas as ocorrências de `chat.whatsapp.com/...`.
 - **Imagens novas**: use `.webp`, mantenha `width`/`height` no `<img>` e use `loading="lazy"` só fora da primeira tela.
+- **Trocar uma foto da galeria ou de setor**: cada foto tem duas versões, usadas pelo `srcset` (o navegador escolhe conforme a tela). Substitua as duas com o mesmo nome:
+  - galeria: `gal-N.webp` (480×600) e `gal-N-336w.webp` (336×420);
+  - setores: `set-nome.webp` (480×480) e `set-nome-360w.webp` (360×360);
+  - banner: `banner.webp` (1080×720) e `banner-720w.webp` (720×480).
+- **Serviço externo novo** (vídeo, pixel, formulário, widget): além da Política de Privacidade, libere o domínio no cabeçalho `Content-Security-Policy` do `nginx.conf`, senão o navegador bloqueia.
+- **Mapa**: o iframe usa `data-src` e só carrega quando chega perto da tela. Para trocar o endereço, altere a URL no `data-src` e no `<noscript>`.
 - **Arquivo de tipo novo** (ex.: `.svg`, `.pdf`): inclua a extensão no `COPY` do `Dockerfile`, senão ele não vai para produção.
 - **Página nova**: adicione ao `sitemap.xml`. Ao alterar uma página, atualize o `<lastmod>` dela.
 - **Política de Privacidade**: atualize se o site passar a usar formulários, analytics, pixel ou outro serviço externo.
