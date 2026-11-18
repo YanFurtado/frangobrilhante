@@ -1,17 +1,16 @@
 /*
- * Meta Pixel: helper central e eventos de clique.
+ * Meta Pixel: helper central. Hoje mede só o evento FindLocation (mapa da loja).
  * O código base do pixel (fbq init + PageView) fica no <head> de cada página;
  * este arquivo só dispara eventos e nunca altera o comportamento dos links.
  *
- * Como instrumentar um elemento novo (link ou botão):
- *   <a href="..." data-fb-event="Lead" data-fb-name="Destino do botão">
+ * Como instrumentar um elemento novo (link ou botão de localização):
  *   <a href="..." data-fb-event="FindLocation" data-fb-name="Nome do mapa">
  * Para um iframe de mapa, coloque os mesmos atributos no elemento que o envolve.
  */
 (function () {
   'use strict';
 
-  var CATEGORIAS = { Lead: 'Social / Contato', FindLocation: 'Localizacao' };
+  var CATEGORIAS = { FindLocation: 'Localizacao' };
 
   // Envia o evento só se o pixel carregou (bloqueador de anúncios, rede lenta etc. não quebram a página)
   function track(evento, params) {

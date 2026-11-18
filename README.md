@@ -11,7 +11,7 @@ Tudo fica em `frango-brilhante-linkinbio-site/`:
 | `index.html` | Página principal (CSS e JS embutidos) |
 | `privacidade.html` | Política de Privacidade |
 | `404.html` | Página de erro para endereços inexistentes |
-| `metaPixel.js` | Helper do Meta Pixel: dispara `Lead` e `FindLocation` nos elementos com `data-fb-event` |
+| `metaPixel.js` | Helper do Meta Pixel: dispara `FindLocation` nos elementos com `data-fb-event` |
 | `robots.txt`, `sitemap.xml` | Indexação |
 | `*.webp`, `*.jpg`, `*.png`, `*.ico` | Imagens, favicons e imagem de compartilhamento (`og.jpg`) |
 | `inter-latin.woff2`, `inter-OFL.txt` | Fonte Inter hospedada no site e sua licença |
@@ -56,7 +56,7 @@ E abra a página no celular para ver se o mapa e os links carregam.
 - **Arquivo de tipo novo** (ex.: `.svg`, `.pdf`): inclua a extensão no `COPY` do `Dockerfile`, senão ele não vai para produção.
 - **Página nova**: adicione ao `sitemap.xml`. Ao alterar uma página, atualize o `<lastmod>` dela.
 - **Política de Privacidade**: atualize se o site passar a usar formulários, analytics, pixel ou outro serviço externo.
-- **Meta Pixel** (ID `1142556078689079`): o código base fica no `<head>` de `index.html` e `privacidade.html`. Para medir um link ou botão novo, adicione `data-fb-event="Lead"` (contato, WhatsApp, redes sociais) ou `data-fb-event="FindLocation"` (mapa, endereço, rotas) e `data-fb-name="Nome do botão"`. O `metaPixel.js` cuida do resto. Confira os eventos com a extensão Meta Pixel Helper ou no Gerenciador de Eventos (Testar eventos).
+- **Meta Pixel** (ID `1142556078689079`): o código base (PageView) fica no `<head>` de `index.html` e `privacidade.html`. O único evento personalizado é `FindLocation`, no mapa "Onde estamos". Para medir outro elemento de localização, adicione `data-fb-event="FindLocation"` e `data-fb-name="Nome do botão"`. O `metaPixel.js` cuida do resto. Confira os eventos com a extensão Meta Pixel Helper ou no Gerenciador de Eventos (Testar eventos).
 
 ## Responsáveis
 
