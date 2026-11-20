@@ -11,6 +11,7 @@ Tudo fica em `frango-brilhante-linkinbio-site/`:
 | `index.html` | Página principal (CSS e JS embutidos) |
 | `privacidade.html` | Política de Privacidade |
 | `404.html` | Página de erro para endereços inexistentes |
+| `metaPixel.js` | Helper do Meta Pixel: dispara os eventos dos elementos com `data-fb-event` |
 | `robots.txt`, `sitemap.xml` | Indexação |
 | `*.webp`, `*.jpg`, `*.png`, `*.ico` | Imagens, favicons e imagem de compartilhamento (`og.jpg`) |
 | `inter-latin.woff2`, `inter-OFL.txt` | Fonte Inter hospedada no site e sua licença |
@@ -55,6 +56,7 @@ E abra a página no celular para ver se o mapa e os links carregam.
 - **Arquivo de tipo novo** (ex.: `.svg`, `.pdf`): inclua a extensão no `COPY` do `Dockerfile`, senão ele não vai para produção.
 - **Página nova**: adicione ao `sitemap.xml`. Ao alterar uma página, atualize o `<lastmod>` dela.
 - **Política de Privacidade**: atualize se o site passar a usar formulários, analytics, pixel ou outro serviço externo.
+- **Meta Pixel** (ID `1142556078689079`): o código base (PageView) fica no `<head>` de `index.html` e `privacidade.html`. Eventos por intenção: `Lead` = WhatsApp (grupo de ofertas), `ViewContent` = perfis nas redes sociais, `Contact` = telefone, `FindLocation` = mapa e botão "Como chegar". Para medir um link ou botão novo, adicione `data-fb-event="<evento>"` e `data-fb-name="Nome do botão"`; o `metaPixel.js` cuida do resto. Confira com a extensão Meta Pixel Helper ou em Gerenciador de Eventos → Testar eventos (sem bloqueador de anúncios).
 
 ## Responsáveis
 

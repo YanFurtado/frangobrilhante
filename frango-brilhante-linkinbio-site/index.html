@@ -168,6 +168,7 @@ svg.i{width:22px;height:22px;fill:#fff}
 .map{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--bdr);box-shadow:var(--s1);aspect-ratio:4/3;background:#e9e5dc}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 @media(min-width:600px){.map{aspect-ratio:16/9}}
+.map+.lk{margin-top:12px}
 
 /* footer */
 .foot{text-align:center;padding:1.75rem 1.25rem .5rem;border-top:1px solid var(--bdr);margin:2rem 1.25rem 0}
@@ -185,8 +186,26 @@ svg.i{width:22px;height:22px;fill:#fff}
 @media(max-width:360px){.soc{width:44px;height:44px}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1142556078689079');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<script src="metaPixel.js" defer></script>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1142556078689079&ev=PageView&noscript=1"
+/></noscript>
 
 <!-- ícones reutilizados -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -198,6 +217,7 @@ svg.i{width:22px;height:22px;fill:#fff}
   <symbol id="i-tag" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></symbol>
   <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></symbol>
 </svg>
 
@@ -208,24 +228,24 @@ svg.i{width:22px;height:22px;fill:#fff}
   </header>
 
   <nav class="social-bar" aria-label="Redes sociais">
-    <a href="https://www.instagram.com/frangobrilhante_reserva/" target="_blank" rel="noopener" class="soc soc-ig" aria-label="Instagram"><svg class="i"><use href="#i-ig"/></svg></a>
-    <a href="https://www.facebook.com/p/Supermercado-Frango-Brilhante-100071972671918/" target="_blank" rel="noopener" class="soc soc-fb" aria-label="Facebook"><svg class="i"><use href="#i-fb"/></svg></a>
-    <a href="https://www.tiktok.com/@frangobrilhante" target="_blank" rel="noopener" class="soc soc-tk" aria-label="TikTok"><svg class="i"><use href="#i-tk"/></svg></a>
-    <a href="https://www.youtube.com/@frangobrilhante" target="_blank" rel="noopener" class="soc soc-yt" aria-label="YouTube"><svg class="i"><use href="#i-yt"/></svg></a>
-    <a href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" target="_blank" rel="noopener" class="soc soc-wa" aria-label="Grupo de ofertas no WhatsApp"><svg class="i"><use href="#i-wa"/></svg></a>
+    <a href="https://www.instagram.com/frangobrilhante_reserva/" target="_blank" rel="noopener" class="soc soc-ig" aria-label="Instagram" data-fb-event="ViewContent" data-fb-name="Instagram (barra social)"><svg class="i"><use href="#i-ig"/></svg></a>
+    <a href="https://www.facebook.com/p/Supermercado-Frango-Brilhante-100071972671918/" target="_blank" rel="noopener" class="soc soc-fb" aria-label="Facebook" data-fb-event="ViewContent" data-fb-name="Facebook (barra social)"><svg class="i"><use href="#i-fb"/></svg></a>
+    <a href="https://www.tiktok.com/@frangobrilhante" target="_blank" rel="noopener" class="soc soc-tk" aria-label="TikTok" data-fb-event="ViewContent" data-fb-name="TikTok (barra social)"><svg class="i"><use href="#i-tk"/></svg></a>
+    <a href="https://www.youtube.com/@frangobrilhante" target="_blank" rel="noopener" class="soc soc-yt" aria-label="YouTube" data-fb-event="ViewContent" data-fb-name="YouTube (barra social)"><svg class="i"><use href="#i-yt"/></svg></a>
+    <a href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" target="_blank" rel="noopener" class="soc soc-wa" aria-label="Grupo de ofertas no WhatsApp" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (barra social)"><svg class="i"><use href="#i-wa"/></svg></a>
   </nav>
 
   <main>
   <section class="sec" aria-labelledby="t-links">
     <h2 class="sec-title" id="t-links">Links</h2>
 
-    <a href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" target="_blank" rel="noopener" class="lk vip rv d1">
+    <a href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" target="_blank" rel="noopener" class="lk vip rv d1" data-fb-event="Lead" data-fb-name="WhatsApp Grupo VIP de Ofertas (botão principal)">
       <span class="lk-i"><svg class="i"><use href="#i-wa"/></svg></span>
       <span class="lk-c"><span class="lk-t">Grupo VIP de ofertas</span><span class="lk-s">Entre no grupo pelo WhatsApp</span></span>
       <svg class="lk-a"><use href="#i-arrow"/></svg>
     </a>
 
-    <a href="https://www.instagram.com/frangobrilhante_reserva/" target="_blank" rel="noopener" class="lk rv d2">
+    <a href="https://www.instagram.com/frangobrilhante_reserva/" target="_blank" rel="noopener" class="lk rv d2" data-fb-event="ViewContent" data-fb-name="Instagram Ofertas da Semana">
       <span class="lk-i" style="background:#E53935"><svg class="i"><use href="#i-tag"/></svg></span>
       <span class="lk-c"><span class="lk-t">Ofertas da semana</span><span class="lk-s">Confira no nosso Instagram</span></span>
       <svg class="lk-a"><use href="#i-arrow"/></svg>
@@ -248,12 +268,12 @@ svg.i{width:22px;height:22px;fill:#fff}
   <section class="sec" aria-labelledby="t-setores">
     <h2 class="sec-title" id="t-setores">Setores</h2>
     <div class="cat-g">
-      <a class="cat rv d1" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t"><img src="set-acougue.webp" srcset="set-acougue-360w.webp 360w, set-acougue.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Açougue<small>Carnes no balcão</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
-      <a class="cat rv d2" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t"><img src="set-hortifruti.webp" srcset="set-hortifruti-360w.webp 360w, set-hortifruti.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Hortifrúti<small>Frutas e verduras</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
-      <a class="cat rv d3" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t"><img src="set-bebidas.webp" srcset="set-bebidas-360w.webp 360w, set-bebidas.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Bebidas<small>Geladas e variadas</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
-      <a class="cat rv d4" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t"><img src="set-mercearia.webp" srcset="set-mercearia-360w.webp 360w, set-mercearia.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Mercearia<small>O básico da casa</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
-      <a class="cat rv d5" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t"><img src="set-limpeza.webp" srcset="set-limpeza-360w.webp 360w, set-limpeza.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Limpeza<small>Casa em ordem</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
-      <a class="cat rv d6" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t"><img src="set-higiene.webp" srcset="set-higiene-360w.webp 360w, set-higiene.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Higiene e beleza<small>Cuidados pessoais</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
+      <a class="cat rv d1" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (setor Açougue)"><img src="set-acougue.webp" srcset="set-acougue-360w.webp 360w, set-acougue.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Açougue<small>Carnes no balcão</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
+      <a class="cat rv d2" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (setor Hortifrúti)"><img src="set-hortifruti.webp" srcset="set-hortifruti-360w.webp 360w, set-hortifruti.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Hortifrúti<small>Frutas e verduras</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
+      <a class="cat rv d3" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (setor Bebidas)"><img src="set-bebidas.webp" srcset="set-bebidas-360w.webp 360w, set-bebidas.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Bebidas<small>Geladas e variadas</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
+      <a class="cat rv d4" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (setor Mercearia)"><img src="set-mercearia.webp" srcset="set-mercearia-360w.webp 360w, set-mercearia.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Mercearia<small>O básico da casa</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
+      <a class="cat rv d5" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (setor Limpeza)"><img src="set-limpeza.webp" srcset="set-limpeza-360w.webp 360w, set-limpeza.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Limpeza<small>Casa em ordem</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
+      <a class="cat rv d6" target="_blank" rel="noopener" href="https://chat.whatsapp.com/IYkydIblHKbHU9B7aLDH7d?mode=gi_t" data-fb-event="Lead" data-fb-name="WhatsApp Grupo de Ofertas (setor Higiene e beleza)"><img src="set-higiene.webp" srcset="set-higiene-360w.webp 360w, set-higiene.webp 480w" sizes="(min-width: 480px) 215px, calc(50vw - 25px)" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="cat-n">Higiene e beleza<small>Cuidados pessoais</small><span class="sr-only"> — entrar no grupo de ofertas no WhatsApp</span></span></a>
     </div>
     <p class="hint">Toque num setor para entrar no nosso grupo de ofertas no WhatsApp</p>
   </section>
@@ -261,7 +281,12 @@ svg.i{width:22px;height:22px;fill:#fff}
   <section class="sec" aria-labelledby="t-local">
     <h2 class="sec-title" id="t-local">Onde estamos</h2>
     <!-- O mapa (~460 KB) só carrega quando chega perto da tela; sem JavaScript, o <noscript> carrega direto -->
-    <div class="map rv"><iframe data-src="https://maps.google.com/maps?q=Frango+Brilhante,+Av.+S%C3%A3o+Jo%C3%A3o,+98+-+Jardim+Fl%C3%B3rida,+Juazeiro+-+BA&z=16&hl=pt-BR&output=embed" title="Mapa: Frango Brilhante, Av. São João, 98, Jardim Flórida, Juazeiro-BA" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><noscript><iframe src="https://maps.google.com/maps?q=Frango+Brilhante,+Av.+S%C3%A3o+Jo%C3%A3o,+98+-+Jardim+Fl%C3%B3rida,+Juazeiro+-+BA&z=16&hl=pt-BR&output=embed" title="Mapa: Frango Brilhante, Av. São João, 98, Jardim Flórida, Juazeiro-BA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></noscript></div>
+    <div class="map rv" data-fb-event="FindLocation" data-fb-name="Mapa Google Maps — Frango Brilhante Jardim Flórida"><iframe data-src="https://maps.google.com/maps?q=Frango+Brilhante,+Av.+S%C3%A3o+Jo%C3%A3o,+98+-+Jardim+Fl%C3%B3rida,+Juazeiro+-+BA&z=16&hl=pt-BR&output=embed" title="Mapa: Frango Brilhante, Av. São João, 98, Jardim Flórida, Juazeiro-BA" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><noscript><iframe src="https://maps.google.com/maps?q=Frango+Brilhante,+Av.+S%C3%A3o+Jo%C3%A3o,+98+-+Jardim+Fl%C3%B3rida,+Juazeiro+-+BA&z=16&hl=pt-BR&output=embed" title="Mapa: Frango Brilhante, Av. São João, 98, Jardim Flórida, Juazeiro-BA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></noscript></div>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Frango+Brilhante,+Av.+S%C3%A3o+Jo%C3%A3o,+98+-+Jardim+Fl%C3%B3rida,+Juazeiro+-+BA" target="_blank" rel="noopener" class="lk" data-fb-event="FindLocation" data-fb-name="Como chegar (Google Maps)">
+      <span class="lk-i" style="background:var(--red)"><svg class="i"><use href="#i-pin"/></svg></span>
+      <span class="lk-c"><span class="lk-t">Como chegar</span><span class="lk-s">Abrir rota no Google Maps</span></span>
+      <svg class="lk-a"><use href="#i-arrow"/></svg>
+    </a>
   </section>
   </main>
 
